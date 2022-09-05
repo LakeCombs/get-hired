@@ -15,9 +15,10 @@ type User struct {
 	Phone         *string            `json:"phone" validate:"required"`
 	Token         *string            `json:"token"`
 	Refresh_token *string            `json:"refresh_token"`
-	User_type     *string            `json:"user_type" validate:"required, eq=ADMIN | eq=USER"`
+	User_type     *string            `json:"user_type" validate:"required,eq=ADMIN|eq=USER"`
 	Created_at    time.Time          `json:"created_at"`
 	Updated_at    time.Time          `json:"updated_at"`
 	User_id       string             `json:"user_id"`
 	Skills        []string           `json:"skills"`
+	Title         string             `json:"title"`
 }

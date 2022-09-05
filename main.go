@@ -33,9 +33,5 @@ func main() {
 
 	})
 
-	router.GET("/api/v2", func(ctx *gin.Context) {
-		ctx.JSON(200, gin.H{"success": "Access granted for api-v2"})
-	})
-
 	router.Run(":" + port)
 }

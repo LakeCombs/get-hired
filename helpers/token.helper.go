@@ -3,12 +3,13 @@ package helpers
 import (
 	"context"
 	"fmt"
-	"github.com/LakeCombs/gethired/database"
 	"log"
 	"os"
 	"time"
 
-	"github.com/dgrijalva/jwt-go"
+	"github.com/LakeCombs/gethired/database"
+
+	jwt "github.com/dgrijalva/jwt-go"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
