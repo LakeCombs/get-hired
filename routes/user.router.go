@@ -1,14 +1,14 @@
 package routes
 
 import (
-	"gethired/controller"
-	"gethired/middleware"
+	"github.com/LakeCombs/gethired/controllers"
+	"github.com/LakeCombs/gethired/middleware"
 
 	"github.com/gin-gonic/gin"
 )
 
 func UserRoutes(incomingRoutes *gin.Engine) {
 	incomingRoutes.Use(middleware.Authenticate())
-	incomingRoutes.GET("/users", controller.GetUsers())
-	incomingRoutes.GET("/users/:user_id", controller.GetUser())
+	incomingRoutes.GET("/users", controllers.GetUsers())
+	incomingRoutes.GET("/users/:user_id", controllers.GetUser())
 }

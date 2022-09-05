@@ -1,6 +1,6 @@
 package services
 
-import models "gethired/model"
+import "github.com/LakeCombs/gethired/models"
 
 type UserService interface {
 	CreateUser(*models.User) error

@@ -1,7 +1,7 @@
 package routes
 
 import (
-	"gethired/controllers"
+	"github.com/LakeCombs/gethired/controllers"
 
 	"github.com/gin-gonic/gin"
 )

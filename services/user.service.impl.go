@@ -3,8 +3,8 @@ package services
 import (
 	"context"
 	"errors"
-	models "gethired/model"
 
+	"github.com/LakeCombs/gethired/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )
@@ -66,8 +66,8 @@ func (u *UserServiceImpl) GetAll() ([]*models.User, error) {
 }
 
 func (u *UserServiceImpl) UpdateUser(user *models.User) error {
-	filter := bson.D{bson.E{Key: "id", Value: user.Id}}
-	update := bson.D{bson.E{Key: "$set", Value: bson.D{bson.E{Key: "first_name", Value: user.FirstName}, bson.E{Key: "last_name", Value: user.LastName}, bson.E{Key: "skills", Value: user.Skills}}}}
+	filter := bson.D{bson.E{Key: "id", Value: user.ID}}
+	update := bson.D{bson.E{Key: "$set", Value: bson.D{bson.E{Key: "first_name", Value: user.First_name}, bson.E{Key: "last_name", Value: user.Last_name}, bson.E{Key: "skills", Value: user.Skills}}}}
 	result, _ := u.usercollection.UpdateOne(u.ctx, filter, update)
 	if result.MatchedCount != 1 {
 		return errors.New("no matched document found for update")
